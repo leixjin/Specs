@@ -17,11 +17,10 @@ Pod::Spec.new do |s|
   s.homepage     = "http://gitlab.mobile.lesports.com/Components/LESportsPatch-iOS"
   s.license      = "MIT"
   s.author       = { "P.Chen" => "chenpeng5@letv.com" }
-#s.source       = { :git => "http://gitlab.mobile.lesports.com/Components/LESportsPatch-iOS.git", :tag => #s.version.to_s, :submodules => true }
-  s.source       = { :git => "http://gitlab.mobile.lesports.com/Components/LESportsPatch-iOS.git", :tag => s.version.to_s }
+  s.source       = { :git => "http://gitlab.mobile.lesports.com/Components/LESportsPatch-iOS.git", :tag => s.version.to_s, :submodules => true }
   s.platform     = :ios, '6.0'
   s.requires_arc = true
-  s.source_files  = "LESportsPatch/**/*.{h,m,js}"
+  s.source_files  = "LESportsPatch/JSPatch/*.{h,m}", "LESportsPatch/**/*.{h,m,js}"
 # s.resource = "LESportsPatch/**/LESportsPatch.js"
   s.frameworks   = "Foundation"
   s.weak_framework = "JavaScriptCore"
