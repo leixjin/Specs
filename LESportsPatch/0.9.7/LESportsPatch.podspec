@@ -20,8 +20,12 @@ Pod::Spec.new do |s|
   s.source       = { :git => "http://gitlab.mobile.lesports.com/Components/LESportsPatch-iOS.git", :tag => s.version.to_s, :submodules => true }
   s.platform     = :ios, '6.0'
   s.requires_arc = true
-  s.source_files  = "LESportsPatch/JSPatch/*.{h,m}", "LESportsPatch/**/*.{h,m,js}"
+  s.source_files  = "LESportsPatch/LESportsPatch.{h,m}"
 # s.resource = "LESportsPatch/**/LESportsPatch.js"
-  s.frameworks   = "Foundation"
-  s.weak_framework = "JavaScriptCore"
+
+  s.subspec 'JSPatch' do |ss|
+    ss.source_files = "LESportsPatch/JSPatch/**/*.{h,m,js}"
+    ss.frameworks   = "Foundation"
+    ss.weak_framework = "JavaScriptCore"
+  end
 end
